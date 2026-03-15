@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Archive | Polygon MathSoc</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    <script src="../assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/archive.css">
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="brand-container">
+            <img src="../polygon-logo.svg" alt="Polygon Logo" class="logo-img">
+            <div class="logo-text-group">
+                <span class="logo-title">Polygon</span>
+                <span class="logo-divider"></span>
+                <span class="logo-subtitle">MathSoc IITG</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../index.html#initiatives" class="nav-link">Initiatives</a></li>
+            <li><a href="archive.html" class="nav-link active-page">Archive</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <div class="page-header gsap-fade">
+            <h1>Problem Archive</h1>
+            <p>A categorized collection of past problem sets, proofs, and challenges.</p>
+        </div>
+
+        <div class="filter-menu gsap-fade">
+            <button class="filter-btn active" data-filter="all">All Topics</button>
+            <button class="filter-btn" data-filter="calculus">Calculus</button>
+            <button class="filter-btn" data-filter="number-theory">Number Theory</button>
+            <button class="filter-btn" data-filter="linear-algebra">Linear Algebra</button>
+        </div>
+
+        <div class="grid archive-grid">
+            
+            <div class="card archive-card" data-category="calculus">
+                <span class="card-tag">Calculus</span>
+                <h3>POTW-041</h3>
+                <p class="archive-math">
+                    Prove the Basel problem, showing that:
+                    $$ \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} $$
+                </p>
+            </div>
+
+            <div class="card archive-card" data-category="number-theory">
+                <span class="card-tag">Number Theory</span>
+                <h3>POTW-040</h3>
+                <p class="archive-math">
+                    Prove that there are infinitely many primes $p$ such that:
+                    $$ p \equiv 1 \pmod 4 $$
+                </p>
+            </div>
+
+            <div class="card archive-card" data-category="linear-algebra">
+                <span class="card-tag">Linear Algebra</span>
+                <h3>POTW-039</h3>
+                <p class="archive-math">
+                    Let $A$ and $B$ be $n \times n$ matrices. Prove that:
+                    $$ \text{tr}(AB) = \text{tr}(BA) $$
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Polygon Mathematics Society. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/archive.js"></script>
+</body>
+</html>
