@@ -16,30 +16,11 @@
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-
-    <nav>
-        <a href="#" class="brand-container">
-            <img src="polygon-logo.svg" alt="Polygon Logo" class="logo-img">
-            <div class="logo-text-group">
-                <span class="logo-title">Polygon</span>
-                <span class="logo-divider"></span>
-                <span class="logo-subtitle">MathSoc IITG</span>
-            </div>
-        </a>
-        
-        <ul>
-            <li><a href="index.html" class="nav-link active-page">Home</a></li>
-            <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
-            <li><a href="pages/archive.html" class="nav-link">Archive</a></li>
-        </ul>
-    </nav>
+    <div data-shared-nav></div>
 
     <header class="hero">
         <h1 class="gsap-anim">The creative pursuit of <i>mathematical</i> truth.</h1>
         <p class="gsap-anim">A rigorously inclusive community of analytical thinkers dedicated to experiencing logic as it was meant to be.</p>
-        <div class="gsap-anim" style="margin-top: 1rem;">
-            <a href="#manifesto" class="btn">Read Our Manifesto</a>
-        </div>
     </header>
 
     <main class="container">
@@ -50,48 +31,50 @@
             </p>
         </section>
 
-        <section id="initiatives">
-            <h2 class="section-title gsap-fade">Academic Initiatives</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Guest Symposia</h3>
-                    <p>Engage with professors and industry leaders presenting their ongoing research in topology, abstract algebra, and data science.</p>
-                </div>
-                <div class="card">
-                    <h3>Technical Seminars</h3>
-                    <p>Master the modern mathematician's toolkit. We host hands-on sessions for formal $\LaTeX$ typesetting, Python modeling, and algorithmic logic.</p>
-                </div>
-                <div class="card">
-                    <h3>The Putnam Collective</h3>
-                    <p>Rigorous, intensive preparation for intercollegiate mathematics competitions, focusing on advanced heuristic techniques rather than rote memorization.</p>
-                </div>
-            </div>
-        </section>
-
         <section id="potw" class="potw">
-            <h2>Problem of the Week (042)</h2>
+            <h2>Problem of the Week (P01)</h2>
             
             <div class="problem-statement">
-                Find the sum of all positive integers $n$ such that the rational expression 
-                $$\frac{n^2 + 2n + 3}{n + 1}$$
-                yields an integer value.
+                Show that there are no continuous functions $f, g$ and $h$ defined on $\mathbb{R}$ satisfying$$h(f(x) + g(y)) = xy \text{ for all } x, y \in \mathbb{R}.$$
             </div>
             
             <button class="btn-outline" id="toggle-proof-btn">Show Proof Outline</button>
             
             <div id="proof-reveal">
                 <strong style="color: var(--oxford-navy); font-family: 'Merriweather', serif; font-style: italic;">Proof.</strong> 
-                We begin by applying polynomial division to separate the expression:
-                $$\frac{n^2 + 2n + 3}{n + 1} = (n + 1) + \frac{2}{n + 1}$$
-                Since $(n+1)$ is an integer, the fractional term $\frac{2}{n + 1}$ must evaluate to an integer. Therefore, $(n + 1)$ must be a positive divisor of $2$. Solving this restricts $n$ to $1$. $\blacksquare$
+                <p>Fix $x$ and $y$ separately to show $f, g$, and $h$ must be continuous, strictly monotonic functions.</p>
+                <p>Since $h$ is strictly monotonic, it is injective, implying $f(x)+g(y)$ must be equal whenever $xy$ is equal.</p>
+                <p>Evaluating $xy = 1$ for $(1,1)$ and $(-1,-1)$ gives the relation $f(1) + g(1) = f(-1) + g(-1)$.</p>
+                <p>Evaluating $xy = -1$ for $(1,-1)$ and $(-1,1)$ gives the relation $f(1) + g(-1) = f(-1) + g(1)$.</p>
+                <p>Subtracting these equations yields $g(1) = g(-1)$, which contradicts the strict monotonicity required for $g$.</p>
+            </div>
+        </section>
+
+        <section id="tow" class="tow">
+            <h2>Theorem of the Week (T01)</h2>
+
+            <div class="problem-statement">
+                <strong style="color: var(--oxford-navy); font-family: 'Merriweather', serif; font-style: italic;">Theorem (AM-GM for two positive reals).</strong>
+                For all positive real numbers $a, b$, we have
+                $$\frac{a+b}{2} \geq \sqrt{ab}$$
+                with equality if and only if $a=b$.
+            </div>
+
+            <button class="btn-outline" id="toggle-theorem-proof-btn">Show Proof Outline</button>
+
+            <div id="theorem-proof-reveal">
+                <strong style="color: var(--oxford-navy); font-family: 'Merriweather', serif; font-style: italic;">Proof.</strong>
+                Since $(a-b)^2 \ge 0$ for all real $a,b$, expanding gives
+                $$a^2 - 2ab + b^2 \ge 0 \Rightarrow (a+b)^2 \ge 4ab.$$
+                Because $a,b>0$, both sides are nonnegative, so taking square roots yields
+                $$\frac{a+b}{2} \ge \sqrt{ab}.$$
+                Equality holds exactly when $(a-b)^2=0$, i.e., when $a=b$. $\blacksquare$
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Polygon Mathematics Society. All rights reserved.</p>
-    </footer>
+    <footer data-shared-footer></footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
