@@ -1,0 +1,154 @@
+/* Hero Section (Inverted for impact) */
+.hero {
+    min-height: 85vh;
+    background-color: var(--oxford-navy);
+    color: var(--base-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    margin-top: 70px;
+    position: relative;
+}
+
+.hero h1 {
+    color: var(--base-white);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    font-weight: 300;
+}
+
+.hero h1 i {
+    color: var(--accent-gold);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--canvas-gray);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.btn {
+    background: var(--accent-gold);
+    color: var(--oxford-navy);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-gold);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--accent-gold);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 5%;
+}
+
+/* The Manifesto Section */
+.manifesto-section {
+    text-align: center;
+    padding: 2rem 0 6rem 0;
+    border-bottom: 1px solid var(--canvas-gray);
+    margin-bottom: 5rem;
+}
+
+.manifesto-text {
+    font-family: 'Merriweather', serif;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: var(--oxford-navy);
+    max-width: 850px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.manifesto-text strong {
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3.5rem;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Journal-Style POTW Section */
+.potw {
+    margin-top: 8rem;
+    background: var(--base-white);
+    border: 1px solid var(--canvas-gray);
+    padding: 4rem;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.03);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.potw::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--accent-gold);
+}
+
+.potw h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+
+.problem-statement {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: var(--oxford-navy);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--oxford-navy);
+    border: 1px solid var(--oxford-navy);
+    padding: 0.8rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--oxford-navy);
+    color: var(--base-white);
+}
+
+#proof-reveal {
+    display: none;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px dashed var(--canvas-gray);
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .manifesto-text { font-size: 1.3rem; }
+    .potw { padding: 2rem; }
+}

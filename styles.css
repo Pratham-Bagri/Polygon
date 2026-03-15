@@ -1,0 +1,129 @@
+:root {
+    --base-white: #FFFFFF;
+    --canvas-gray: #E2E8F0;
+    --oxford-navy: #0F172A;
+    --accent-gold: #D4AF37;
+    --text-muted: #475569;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--base-white);
+    color: var(--oxford-navy);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .serif-text {
+    font-family: 'Merriweather', serif;
+    color: var(--oxford-navy);
+}
+
+nav {
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--canvas-gray);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--oxford-navy);
+    letter-spacing: -0.5px;
+}
+
+.logo-divider {
+    width: 1.5px;
+    height: 24px;
+    background-color: var(--accent-gold);
+    opacity: 0.6;
+}
+
+.logo-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    transform: translateY(1px);
+}
+
+nav ul { display: flex; gap: 2.5rem; list-style: none; }
+
+nav a.nav-link {
+    color: var(--oxford-navy);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a.nav-link:hover,
+nav a.nav-link.active-page {
+    color: var(--accent-gold);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--canvas-gray);
+    padding: 3rem 2.5rem;
+    border-top: 4px solid var(--oxford-navy);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-top-color: var(--accent-gold);
+    background: #EDF2F7;
+}
+
+footer {
+    background: var(--oxford-navy);
+    color: var(--canvas-gray);
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    nav ul { display: none; }
+}
