@@ -3,83 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polygon Mathematics Society</title>
+    <title>Polygon MathSoc | IIT Guwahati</title>
     
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-
-    <script src="assets/js/mathjax-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] } };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/index.css">
-</head>
-<body>
-    <div data-shared-nav></div>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { oxford: '#0F172A', gold: '#D4AF37', canvas: '#E2E8F0' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] }
+                }
+            }
+        }
+    </script>
 
-    <header class="hero">
-        <h1 class="gsap-anim">The creative pursuit of <i>mathematical</i> truth.</h1>
-        <p class="gsap-anim">A rigorously inclusive community of analytical thinkers dedicated to experiencing logic as it was meant to be.</p>
+    <style>
+        .bg-math-grid {
+            background-size: 50px 50px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-position: center center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-oxford antialiased overflow-x-hidden pt-[75px] flex flex-col min-h-screen">
+
+    <nav class="fixed w-full top-0 left-0 h-[75px] z-[100] flex justify-between items-center px-6 lg:px-[5%] bg-white border-b border-gray-200 shadow-sm">
+        <a href="/" class="flex items-center gap-3 no-underline">
+            <svg class="h-8 w-auto" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.0394 11.8777L22.9971 2.0688M26.0394 11.8777L13.365 11.8211M26.0394 11.8777L29.7417 23.8143M26.0394 11.8777L23.0244 15.8699M29.7417 23.8143L33.9134 20.8639L38.0851 17.9134M29.7417 23.8143L30.1207 25.0361L30.4996 26.2579M29.7417 23.8143L19.3554 31.135M29.7417 23.8143L24.9821 22.2787M22.9971 2.0688L21.8837 1.24063C20.6636 0.333113 18.9976 0.315582 17.7586 1.19722L2.02128 12.3961C0.78753 13.274 0.256868 14.8449 0.705445 16.2911L6.40626 34.6713C6.85789 36.1274 8.19876 37.1248 9.72324 37.1385L28.9665 37.3117C30.4807 37.3253 31.8325 36.3652 32.3185 34.9311L32.7734 33.5887M22.9971 2.0688L37.2894 12.6994C38.5095 13.6069 39.0055 15.1975 38.5175 16.6376L38.0851 17.9134M32.7734 33.5887L32.3944 32.3669L32.0155 31.1451M32.7734 33.5887L37.794 30.016L38.4579 28.0566L39.1219 26.0972M38.0851 17.9134L43.1057 14.3407L42.4418 16.3001L41.7778 18.2595M31.2575 28.7015L35.4293 25.7511L40.4499 22.1783M31.2575 28.7015L30.8786 27.4797L30.4996 26.2579M31.2575 28.7015L31.6365 29.9233L32.0155 31.1451M30.4996 26.2579L36.7572 21.8322L41.7778 18.2595M32.0155 31.1451L34.1013 29.6699L39.1219 26.0972M9.234 23.7228L13.365 11.8211M9.234 23.7228L14.2947 27.4289L19.3554 31.135M9.234 23.7228L13.9828 22.2414M13.365 11.8211L16.1554 15.765M19.3554 31.135L19.4291 26.2626M41.7778 18.2595L41.1138 20.2189L40.4499 22.1783M40.4499 22.1783L39.7859 24.1377L39.1219 26.0972" stroke="#0F172A" stroke-width="1.09559" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex items-center gap-3">
+                <span class="font-serif text-2xl font-bold text-oxford tracking-tight">Polygon</span>
+                <span class="w-[1px] h-6 bg-gold"></span>
+                <span class="font-sans text-xs font-semibold uppercase tracking-widest text-gray-500 translate-y-[1px]">MathSoc IITG</span>
+            </div>
+        </a>
+        <ul class="hidden md:flex gap-8 list-none m-0 p-0 items-center">
+            <li><a href="#" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Home</a></li>
+            <li><a href="#totw" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Theorem of the Week</a></li>
+            <li><a href="#potw" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Problem of the Week</a></li>
+            <li><a href="pages/initiatives.html" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Initiatives</a></li>
+            <li><a href="pages/archive.html" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Archive</a></li>
+        </ul>
+    </nav>
+
+    <header class="relative bg-oxford overflow-hidden flex items-center bg-math-grid py-[50px]">
+        <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-[5%] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
+            <div class="text-left flex flex-col items-start w-full max-w-xl">
+                <h1 class="text-white text-5xl sm:text-6xl lg:text-[4.5rem] leading-[1.15] mb-6 font-serif font-light tracking-tight">
+                    The creative pursuit of <br />
+                    <i class="text-gold italic font-serif pr-2">mathematical</i><br />
+                    truth.
+                </h1>
+                <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-10 font-sans font-light max-w-[500px]">
+                    A rigorously inclusive community of analytical thinkers dedicated to experiencing logic as it was meant to be.
+                </p>
+                <a href="#manifesto" class="bg-gold text-oxford px-8 py-4 text-sm sm:text-base font-sans font-bold transition-all duration-300 hover:bg-[#b5952f] inline-block">
+                    Read our manifesto
+                </a>
+            </div>
+            <div class="flex justify-center items-center w-full h-full">
+                <div class="relative w-full aspect-square lg:aspect-[4/3] max-w-[650px] flex justify-center items-center">
+                    <canvas id="mathCanvas" class="w-full h-full"></canvas>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
+    <main class="flex-grow bg-white">
         
-        <section id="manifesto" class="manifesto-section gsap-fade">
-            <p class="manifesto-text">
-                "Too many people are alienated by the way mathematics is traditionally taught—reduced to rote memorization and a series of disconnected formulas. We exist to change that. Our society is dedicated to experiencing math as it is meant to be: a <strong>highly creative, intuitive, and deeply joyful</strong> pursuit of truth."
-            </p>
-        </section>
-
-        <section id="potw" class="potw">
-            <h2>Problem of the Week (P01)</h2>
-            
-            <div class="problem-statement">
-                Show that there are no continuous functions $f, g$ and $h$ defined on $\mathbb{R}$ satisfying$$h(f(x) + g(y)) = xy \text{ for all } x, y \in \mathbb{R}.$$
-            </div>
-            
-            <button class="btn-outline" id="toggle-proof-btn">Show Proof Outline</button>
-            
-            <div id="proof-reveal">
-                <strong style="color: var(--oxford-navy); font-family: 'Merriweather', serif; font-style: italic;">Proof.</strong> 
-                <p>Fix $x$ and $y$ separately to show $f, g$, and $h$ must be continuous, strictly monotonic functions.</p>
-                <p>Since $h$ is strictly monotonic, it is injective, implying $f(x)+g(y)$ must be equal whenever $xy$ is equal.</p>
-                <p>Evaluating $xy = 1$ for $(1,1)$ and $(-1,-1)$ gives the relation $f(1) + g(1) = f(-1) + g(-1)$.</p>
-                <p>Evaluating $xy = -1$ for $(1,-1)$ and $(-1,1)$ gives the relation $f(1) + g(-1) = f(-1) + g(1)$.</p>
-                <p>Subtracting these equations yields $g(1) = g(-1)$, which contradicts the strict monotonicity required for $g$.</p>
+        <section id="manifesto" class="text-center py-20 px-6 lg:px-[5%] border-b border-gray-200 relative z-10">
+            <div class="max-w-[1100px] mx-auto">
+                <p class="font-serif text-[1.25rem] sm:text-[1.6rem] leading-[1.7] text-oxford max-w-[850px] mx-auto italic font-light">
+                    "Too many people are alienated by the way mathematics is traditionally taught—reduced to rote memorization and a series of disconnected formulas. We exist to change that. Our society is dedicated to experiencing math as it is meant to be: a <strong class="text-gold font-bold">highly creative, intuitive, and deeply joyful</strong> pursuit of truth."
+                </p>
             </div>
         </section>
 
-        <section id="tow" class="tow">
-            <h2>Theorem of the Week (T01)</h2>
+        <section class="py-16 px-6 lg:px-[5%] bg-[#F8FAFC]">
+            <div class="max-w-[800px] mx-auto flex flex-col gap-12">
+                
+                <div id="totw" class="flex flex-col w-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-6 h-[2px] bg-gold"></span>
+                        <h2 class="text-xl font-serif font-bold text-oxford uppercase tracking-widest">Theorem of the Week</h2>
+                    </div>
 
-            <div class="problem-statement">
-                <strong style="color: var(--oxford-navy); font-family: 'Merriweather', serif; font-style: italic;">Theorem (AM-GM for two positive reals).</strong>
-                For all positive real numbers $a, b$, we have
-                $$\frac{a+b}{2} \geq \sqrt{ab}$$
-                with equality if and only if $a=b$.
-            </div>
+                    <div class="bg-white text-white p-6 md:p-8 border border-white/10 rounded-lg shadow-lg relative overflow-hidden">
+                        <div class="absolute inset-0 bg-math-grid opacity-10 pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-4">
+                                <h3 class="text-xl md:text-2xl font-bold text-oxford font-serif">Fermat's Little Theorem</h3>
+                                <span class="text-[10px] text-gold font-inter tracking-tighter border border-gold/30 px-2 py-0.5 rounded">NUMBER THEORY</span>
+                            </div>
+                            <div class="text-oxford font-serif leading-relaxed text-base">
+                                If $p$ is a prime number, then for any integer $a$:
+                                <div class="my-4 text-center text-oxford text-xl">
+                                    $$ a^p \equiv a \pmod p $$
+                                </div>
+                                <p class="text-xs text-oxford italic">Basis for modern RSA cryptography.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <button class="btn-outline" id="toggle-theorem-proof-btn">Show Proof Outline</button>
+                <div id="potw" class="flex flex-col w-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-6 h-[2px] bg-gold"></span>
+                        <h2 class="text-xl font-serif font-bold text-oxford uppercase tracking-widest">Problem of the Week</h2>
+                    </div>
+                    
+                    <div class="bg-white p-6 md:p-8 border border-gray-200 rounded-lg shadow-lg relative group">
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-center mb-4 border-b border-gray-100 pb-4">
+                                <h3 class="text-xl md:text-2xl font-bold text-oxford font-serif">The Dirichlet Integral</h3>
+                            </div>
+                            <div class="text-gray-700 font-serif leading-relaxed text-base">
+                                Prove that the improper integral converges and find its exact value:
+                                <div class="my-4 text-center text-xl text-oxford font-bold">
+                                    $$ \int_{0}^{\infty} \frac{\sin x}{x} dx = ? $$
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                            <a href="pages/archive.html" class="text-gray-400 text-xs hover:text-oxford transition-colors">Archive &rarr;</a>
+                        </div>
+                    </div>
+                </div>
 
-            <div id="theorem-proof-reveal">
-                <strong style="color: var(--oxford-navy); font-family: 'Merriweather', serif; font-style: italic;">Proof.</strong>
-                Since $(a-b)^2 \ge 0$ for all real $a,b$, expanding gives
-                $$a^2 - 2ab + b^2 \ge 0 \Rightarrow (a+b)^2 \ge 4ab.$$
-                Because $a,b>0$, both sides are nonnegative, so taking square roots yields
-                $$\frac{a+b}{2} \ge \sqrt{ab}.$$
-                Equality holds exactly when $(a-b)^2=0$, i.e., when $a=b$. $\blacksquare$
             </div>
         </section>
-
     </main>
 
-    <footer data-shared-footer></footer>
+    <footer class="bg-oxford text-white border-t border-white/10 pt-16 pb-8 px-6 lg:px-[5%]">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="h-8 w-auto" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.0394 11.8777L22.9971 2.0688M26.0394 11.8777L13.365 11.8211M26.0394 11.8777L29.7417 23.8143M26.0394 11.8777L23.0244 15.8699M29.7417 23.8143L33.9134 20.8639L38.0851 17.9134M29.7417 23.8143L30.1207 25.0361L30.4996 26.2579M29.7417 23.8143L19.3554 31.135M29.7417 23.8143L24.9821 22.2787M22.9971 2.0688L21.8837 1.24063C20.6636 0.333113 18.9976 0.315582 17.7586 1.19722L2.02128 12.3961C0.78753 13.274 0.256868 14.8449 0.705445 16.2911L6.40626 34.6713C6.85789 36.1274 8.19876 37.1248 9.72324 37.1385L28.9665 37.3117C30.4807 37.3253 31.8325 36.3652 32.3185 34.9311L32.7734 33.5887M22.9971 2.0688L37.2894 12.6994C38.5095 13.6069 39.0055 15.1975 38.5175 16.6376L38.0851 17.9134M32.7734 33.5887L32.3944 32.3669L32.0155 31.1451M32.7734 33.5887L37.794 30.016L38.4579 28.0566L39.1219 26.0972M38.0851 17.9134L43.1057 14.3407L42.4418 16.3001L41.7778 18.2595M31.2575 28.7015L35.4293 25.7511L40.4499 22.1783M31.2575 28.7015L30.8786 27.4797L30.4996 26.2579M31.2575 28.7015L31.6365 29.9233L32.0155 31.1451M30.4996 26.2579L36.7572 21.8322L41.7778 18.2595M32.0155 31.1451L34.1013 29.6699L39.1219 26.0972M9.234 23.7228L13.365 11.8211M9.234 23.7228L14.2947 27.4289L19.3554 31.135M9.234 23.7228L13.9828 22.2414M13.365 11.8211L16.1554 15.765M19.3554 31.135L19.4291 26.2626M41.7778 18.2595L41.1138 20.2189L40.4499 22.1783M40.4499 22.1783L39.7859 24.1377L39.1219 26.0972" stroke="#E2E8F0" stroke-width="1.09559" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-bold text-white tracking-tight">Polygon</span>
+                    <span class="w-[1px] h-6 bg-gold"></span>
+                    <span class="font-sans text-xs font-semibold uppercase tracking-widest text-gray-400 translate-y-[1px]">MathSoc IITG</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                    A rigorously inclusive community of analytical thinkers dedicated to experiencing logic as it was meant to be.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-gold font-sans font-bold uppercase tracking-widest text-xs mb-6">Explore</h4>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li><a href="#" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="#potw" class="hover:text-gold transition-colors">Problem of the Week</a></li>
+                    <li><a href="#totw" class="hover:text-gold transition-colors">Theorem of the Week</a></li>
+                    <li><a href="pages/initiatives.html" class="hover:text-gold transition-colors">Initiatives</a></li>
+                    <li><a href="pages/archive.html" class="hover:text-gold transition-colors">Archive</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-gold font-sans font-bold uppercase tracking-widest text-xs mb-6">Connect</h4>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li>Indian Institute of Technology Guwahati</li>
+                    <li>Surjyamukhi Road, North Guwahati</li>
+                    <li>Assam, India 781039</li>
+                    <li class="pt-2">
+                        <a href="mailto:mathsoc@iitg.ac.in" class="hover:text-gold transition-colors border-b border-transparent hover:border-gold pb-0.5">mathsoc@iitg.ac.in</a>
+                    </li>
+                </ul>
+                <div class="flex gap-5 items-center">
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto border-t border-white/10 pt-8 text-center md:text-left text-xs text-gray-500 font-sans">
+            <p>&copy; 2026 Polygon MathSoc, IIT Guwahati. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        const canvas = document.getElementById('mathCanvas');
+        const ctx = canvas.getContext('2d');
+        let time = 0; let animationFrameId; let wave = [];
+        const nTerms = 5; const speed = 0.03;     
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/index.js"></script>
+        function resizeCanvas() {
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width * dpr; canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr); canvas.style.width = `${rect.width}px`; canvas.style.height = `${rect.height}px`;
+            wave = []; 
+        }
+        window.addEventListener('resize', resizeCanvas);
+        const rect = canvas.parentElement.getBoundingClientRect();
+        if(rect.width > 0) resizeCanvas(); else setTimeout(resizeCanvas, 100);
+
+        function drawAxes(width, height) {
+            ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.beginPath(); ctx.moveTo(-width/2, 0); ctx.lineTo(width/2, 0); ctx.moveTo(0, -height/2); ctx.lineTo(0, height/2); ctx.stroke();
+            const tickSpacing = width / 10; ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            for(let i = -5; i <= 5; i++) {
+                let pos = i * tickSpacing;
+                ctx.beginPath(); ctx.moveTo(pos, -3); ctx.lineTo(pos, 3); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(-3, pos); ctx.lineTo(3, pos); ctx.stroke();
+            }
+        }
+
+        function drawFourier() {
+            const width = parseFloat(canvas.style.width); const height = parseFloat(canvas.style.height);
+            if(!width || !height) { animationFrameId = requestAnimationFrame(drawFourier); return; }
+            ctx.clearRect(0, 0, width, height); ctx.save(); ctx.translate(width / 2, height / 2);
+            drawAxes(width, height);
+            
+            let x = -width / 4; let y = 0; const baseRadius = width * 0.12; 
+            for (let i = 0; i < nTerms; i++) {
+                let prevX = x; let prevY = y; let n = i * 2 + 1; 
+                let radius = baseRadius * (4 / (n * Math.PI)); 
+                x += radius * Math.cos(n * time); y += radius * Math.sin(n * time);
+                ctx.beginPath(); ctx.arc(prevX, prevY, radius, 0, 2 * Math.PI); ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)'; ctx.lineWidth = 1; ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(prevX, prevY); ctx.lineTo(x, y); ctx.strokeStyle = 'rgba(212, 175, 55, 0.5)'; ctx.stroke();
+            }
+            wave.unshift(y);
+            ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(0, wave[0]); ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.setLineDash([3, 3]); ctx.stroke(); ctx.setLineDash([]);
+            ctx.beginPath(); ctx.moveTo(0, wave[0]);
+            for (let i = 1; i < wave.length; i++) {
+                if (i * 2 > width / 2) break; 
+                ctx.lineTo(i * 2, wave[i]);
+            }
+            ctx.strokeStyle = '#D4AF37'; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.stroke();
+            if (wave.length > Math.floor(width/2)) { wave.pop(); }
+            ctx.restore(); time -= speed; animationFrameId = requestAnimationFrame(drawFourier);
+        }
+        drawFourier();
+    </script>
 </body>
 </html>

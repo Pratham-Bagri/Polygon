@@ -4,78 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Initiatives | Polygon MathSoc</title>
-
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 
-    <script src="../assets/js/mathjax-config.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/initiatives.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oxford: '#0F172A',
+                        gold: '#D4AF37',
+                        canvas: '#E2E8F0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div data-shared-nav></div>
 
-    <main class="container initiatives-page">
-        <div class="page-header gsap-fade">
-            <h1>Event Highlights</h1>
-            <p>Events designed to build mathematical depth, technical fluency, and problem-solving rigor</p>
-        </div>
+<body class="bg-white text-oxford antialiased overflow-x-hidden pt-[75px] flex flex-col min-h-screen">
 
-        <section aria-label="Initiatives list">
-            <div class="grid">
-                <div class="card">
-                    <div class="initiative-photo">
-                        <img src="../The_BIDMAS_Rule.jpeg" alt="The BID-MAS Rule" loading="lazy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>The BID-MAS Rule</h3>
-                        <p>An exciting auction-themed mathematics event designed to blend logical thinking, strategy, and fun activities into one engaging experience. </p>
-                        <p>Inspired by the mathematical order-of-operations rule, the event challenged participants to think quickly, calculate smartly, and make strategic decisions under pressure.</p>
-                    </div>
+    <nav class="fixed w-full top-0 left-0 h-[75px] z-[100] flex justify-between items-center px-6 lg:px-[5%] bg-white border-b border-gray-200 shadow-sm">
+        <a href="../index.html" class="flex items-center gap-3 no-underline">
+            <svg class="h-8 w-auto" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.0394 11.8777L22.9971 2.0688M26.0394 11.8777L13.365 11.8211M26.0394 11.8777L29.7417 23.8143M26.0394 11.8777L23.0244 15.8699M29.7417 23.8143L33.9134 20.8639L38.0851 17.9134M29.7417 23.8143L30.1207 25.0361L30.4996 26.2579M29.7417 23.8143L19.3554 31.135M29.7417 23.8143L24.9821 22.2787M22.9971 2.0688L21.8837 1.24063C20.6636 0.333113 18.9976 0.315582 17.7586 1.19722L2.02128 12.3961C0.78753 13.274 0.256868 14.8449 0.705445 16.2911L6.40626 34.6713C6.85789 36.1274 8.19876 37.1248 9.72324 37.1385L28.9665 37.3117C30.4807 37.3253 31.8325 36.3652 32.3185 34.9311L32.7734 33.5887M22.9971 2.0688L37.2894 12.6994C38.5095 13.6069 39.0055 15.1975 38.5175 16.6376L38.0851 17.9134M32.7734 33.5887L32.3944 32.3669L32.0155 31.1451M32.7734 33.5887L37.794 30.016L38.4579 28.0566L39.1219 26.0972M38.0851 17.9134L43.1057 14.3407L42.4418 16.3001L41.7778 18.2595M31.2575 28.7015L35.4293 25.7511L40.4499 22.1783M31.2575 28.7015L30.8786 27.4797L30.4996 26.2579M31.2575 28.7015L31.6365 29.9233L32.0155 31.1451M30.4996 26.2579L36.7572 21.8322L41.7778 18.2595M32.0155 31.1451L34.1013 29.6699L39.1219 26.0972M9.234 23.7228L13.365 11.8211M9.234 23.7228L14.2947 27.4289L19.3554 31.135M9.234 23.7228L13.9828 22.2414M13.365 11.8211L16.1554 15.765M19.3554 31.135L19.4291 26.2626M41.7778 18.2595L41.1138 20.2189L40.4499 22.1783M40.4499 22.1783L39.7859 24.1377L39.1219 26.0972" stroke="#0F172A" stroke-width="1.09559" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex items-center gap-3">
+                <span class="font-serif text-2xl font-bold text-oxford tracking-tight">Polygon</span>
+                <span class="w-[1px] h-6 bg-gold"></span>
+                <span class="font-sans text-xs font-semibold uppercase tracking-widest text-gray-500 translate-y-[1px]">MathSoc IITG</span>
+            </div>
+        </a>
+        <ul class="hidden md:flex gap-8 list-none m-0 p-0 items-center">
+            <li><a href="../index.html" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Home</a></li>
+            <li><a href="#" class="text-gold font-medium uppercase tracking-widest text-sm transition-colors">Initiatives</a></li>
+            <li><a href="archive.html" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Archive</a></li>
+        </ul>
+    </nav>
+
+    <main class="flex-grow flex flex-col bg-white">
+        
+        <section class="bg-oxford text-white py-20 lg:py-32 px-6 lg:px-[15%] xl:px-[20%] relative shadow-lg">
+            
+            <div class="absolute inset-0 pointer-events-none opacity-20" style="background-size: 50px 50px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-position: center center;"></div>
+
+            <div class="max-w-[750px] mx-auto w-full relative z-10">
+                
+                <div class="text-center mb-24">
+                    <h1 class="text-white text-4xl sm:text-5xl lg:text-6xl font-serif mb-6 font-light">
+                        Glimpses of <i class="text-gold italic font-serif pr-2">our events</i>.
+                    </h1>
+                    <p class="text-gray-400 text-lg max-w-xl mx-auto font-sans font-light">
+                        Events designed to build mathematical depth, technical fluency, and problem-solving rigor.
+                    </p>
                 </div>
-                <div class="card">
-                    <div class="initiative-photo">
-                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Laptop setup during a technical seminar" loading="lazy">
+
+                <div class="flex flex-col gap-24 lg:gap-32">
+
+                    <div class="w-full shadow-2xl relative group bg-[#1E293B]">
+                        <div class="relative bg-gray-200 h-[220px] md:h-[320px] w-full overflow-hidden">
+                            <img src="../The_BIDMAS_Rule.jpeg" alt="The BID-MAS Rule" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                            
+                            <div class="absolute top-0 right-0 bg-gold text-oxford px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold tracking-widest uppercase z-10 shadow-md">
+                                The BID-MAS Rule
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-6 md:px-10 md:py-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start justify-between">
+                            <div class="flex-shrink-0 flex flex-col items-start min-w-[180px]">
+                                <p class="text-gold text-xs font-bold tracking-widest uppercase mb-1">
+                                    SUN 22 MARCH
+                                </p>
+                                <span class="w-6 h-[1.5px] bg-gold mb-4"></span>
+                                <p class="text-white font-serif text-2xl">Strategy & Logic</p>
+                            </div>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light">
+                                An exciting auction-themed mathematics event designed to blend logical thinking, strategy, and fun activities into one engaging experience. Inspired by the order-of-operations rule.
+                            </p>
+                        </div>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Integration Bee</h3>
-                        <p>Integration Bee was a mathematics competition conducted through eight eliminatory rounds, where participants battled it out by solving challenging integration problems with speed and precision.</p>
-                        <p>The event created an electrifying atmosphere as students showcased their quick thinking, sharp calculus skills, and competitive spirit.</p>
+
+                    <div class="w-full shadow-2xl relative group bg-[#1E293B]">
+                        <div class="relative bg-gray-200 h-[220px] md:h-[320px] w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Integration Bee" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                            
+                            <div class="absolute top-0 right-0 bg-gold text-oxford px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold tracking-widest uppercase z-10 shadow-md">
+                                Integration Bee
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-6 md:px-10 md:py-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start justify-between">
+                            <div class="flex-shrink-0 flex flex-col items-start min-w-[180px]">
+                                <p class="text-gold text-xs font-bold tracking-widest uppercase mb-1">
+                                    FRI 15 APRIL
+                                </p>
+                                <span class="w-6 h-[1.5px] bg-gold mb-4"></span>
+                                <p class="text-white font-serif text-2xl">Calculus Rigor</p>
+                            </div>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light">
+                                A fierce mathematics competition conducted through eight eliminatory rounds, where participants battled it out by solving challenging integration problems with speed and precision.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="initiative-photo">
-                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Laptop setup during a technical seminar" loading="lazy">
+
+                    <div class="w-full shadow-2xl relative group bg-[#1E293B]">
+                        <div class="relative bg-gray-200 h-[220px] md:h-[320px] w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="The Integral Cup" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                            
+                            <div class="absolute top-0 right-0 bg-gold text-oxford px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold tracking-widest uppercase z-10 shadow-md">
+                                The Integral Cup
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-6 md:px-10 md:py-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start justify-between">
+                            <div class="flex-shrink-0 flex flex-col items-start min-w-[180px]">
+                                <p class="text-gold text-xs font-bold tracking-widest uppercase mb-1">
+                                    SAT 14 MAY
+                                </p>
+                                <span class="w-6 h-[1.5px] bg-gold mb-4"></span>
+                                <p class="text-white font-serif text-2xl">Team Maths</p>
+                            </div>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light">
+                                A prestigious team-based mathematics competition conducted through eliminatory rounds, battling it out by solving challenging problems in an electrifying atmosphere.
+                            </p>
+                        </div>
                     </div>
-                    <div class="initiative-content">
-                        <h3>The Integral Cup</h3>
-                        <p>Integration Bee was a mathematics competition conducted through eight eliminatory rounds, where participants battled it out by solving challenging integration problems with speed and precision.</p>
-                        <p>The event created an electrifying atmosphere as students showcased their quick thinking, sharp calculus skills, and competitive spirit.</p>
+
+                    <div class="w-full shadow-2xl relative group bg-[#1E293B]">
+                        <div class="relative bg-gray-200 h-[220px] md:h-[320px] w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="The House Edge" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                            
+                            <div class="absolute top-0 right-0 bg-gold text-oxford px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold tracking-widest uppercase z-10 shadow-md">
+                                The House Edge
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-6 md:px-10 md:py-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start justify-between">
+                            <div class="flex-shrink-0 flex flex-col items-start min-w-[180px]">
+                                <p class="text-gold text-xs font-bold tracking-widest uppercase mb-1">
+                                    SUN 12 JUNE
+                                </p>
+                                <span class="w-6 h-[1.5px] bg-gold mb-4"></span>
+                                <p class="text-white font-serif text-2xl">Game Theory</p>
+                            </div>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light">
+                                An exploration into the mathematics of probability, statistics, and game theory used by casinos and financial markets. Participants engaged in simulated games to calculate expected value.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="initiative-photo">
-                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Laptop setup during a technical seminar" loading="lazy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>The House Edge</h3>
-                        <p>Integration Bee was a mathematics competition conducted through eight eliminatory rounds, where participants battled it out by solving challenging integration problems with speed and precision.</p>
-                        <p>The event created an electrifying atmosphere as students showcased their quick thinking, sharp calculus skills, and competitive spirit.</p>
-                    </div>
+
                 </div>
             </div>
         </section>
+
+        <div class="w-full h-24 lg:h-32 bg-white"></div>
+
     </main>
 
-    <footer data-shared-footer></footer>
+    <footer class="bg-oxford text-white border-t border-white/10 pt-16 pb-8 px-6 lg:px-[5%] relative z-10 mt-auto">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="h-8 w-auto" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.0394 11.8777L22.9971 2.0688M26.0394 11.8777L13.365 11.8211M26.0394 11.8777L29.7417 23.8143M26.0394 11.8777L23.0244 15.8699M29.7417 23.8143L33.9134 20.8639L38.0851 17.9134M29.7417 23.8143L30.1207 25.0361L30.4996 26.2579M29.7417 23.8143L19.3554 31.135M29.7417 23.8143L24.9821 22.2787M22.9971 2.0688L21.8837 1.24063C20.6636 0.333113 18.9976 0.315582 17.7586 1.19722L2.02128 12.3961C0.78753 13.274 0.256868 14.8449 0.705445 16.2911L6.40626 34.6713C6.85789 36.1274 8.19876 37.1248 9.72324 37.1385L28.9665 37.3117C30.4807 37.3253 31.8325 36.3652 32.3185 34.9311L32.7734 33.5887M22.9971 2.0688L37.2894 12.6994C38.5095 13.6069 39.0055 15.1975 38.5175 16.6376L38.0851 17.9134M32.7734 33.5887L32.3944 32.3669L32.0155 31.1451M32.7734 33.5887L37.794 30.016L38.4579 28.0566L39.1219 26.0972M38.0851 17.9134L43.1057 14.3407L42.4418 16.3001L41.7778 18.2595M31.2575 28.7015L35.4293 25.7511L40.4499 22.1783M31.2575 28.7015L30.8786 27.4797L30.4996 26.2579M31.2575 28.7015L31.6365 29.9233L32.0155 31.1451M30.4996 26.2579L36.7572 21.8322L41.7778 18.2595M32.0155 31.1451L34.1013 29.6699L39.1219 26.0972M9.234 23.7228L13.365 11.8211M9.234 23.7228L14.2947 27.4289L19.3554 31.135M9.234 23.7228L13.9828 22.2414M13.365 11.8211L16.1554 15.765M19.3554 31.135L19.4291 26.2626M41.7778 18.2595L41.1138 20.2189L40.4499 22.1783M40.4499 22.1783L39.7859 24.1377L39.1219 26.0972" stroke="#E2E8F0" stroke-width="1.09559" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-bold text-white tracking-tight">Polygon</span>
+                    <span class="w-[1px] h-6 bg-gold"></span>
+                    <span class="font-sans text-xs font-semibold uppercase tracking-widest text-gray-400 translate-y-[1px]">MathSoc IITG</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                    A rigorously inclusive community of analytical thinkers dedicated to experiencing logic as it was meant to be.
+                </p>
+            </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+            <div>
+                <h4 class="text-gold font-sans font-bold uppercase tracking-widest text-xs mb-6">Explore</h4>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li><a href="../index.html" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Initiatives</a></li>
+                    <li><a href="archive.html" class="hover:text-gold transition-colors">Archive</a></li>
+                </ul>
+            </div>
 
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/initiatives.js"></script>
+            <div>
+                <h4 class="text-gold font-sans font-bold uppercase tracking-widest text-xs mb-6">Connect</h4>
+                
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li>Indian Institute of Technology Guwahati</li>
+                    <li>Surjyamukhi Road, North Guwahati</li>
+                    <li>Assam, India 781039</li>
+                    <li class="pt-2">
+                        <a href="mailto:mathsoc@iitg.ac.in" class="hover:text-gold transition-colors border-b border-transparent hover:border-gold pb-0.5">Email: mathsoc@iitg.ac.in</a>
+                    </li>
+                </ul>
+
+                <div class="flex gap-5 items-center">
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="max-w-[1400px] mx-auto border-t border-white/10 pt-8 text-center md:text-left text-xs text-gray-500 font-sans">
+            <p>&copy; 2026 Polygon MathSoc, IIT Guwahati. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
