@@ -52,8 +52,6 @@
         </a>
         <ul class="hidden md:flex gap-8 list-none m-0 p-0 items-center">
             <li><a href="#" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Home</a></li>
-            <li><a href="#totw" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Theorem of the Week</a></li>
-            <li><a href="#potw" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Problem of the Week</a></li>
             <li><a href="pages/initiatives.html" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Initiatives</a></li>
             <li><a href="pages/archive.html" class="text-oxford font-medium uppercase tracking-widest text-sm hover:text-gold transition-colors">Archive</a></li>
         </ul>
@@ -70,9 +68,14 @@
                 <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-10 font-sans font-light max-w-[500px]">
                     A rigorously inclusive community of analytical thinkers dedicated to experiencing logic as it was meant to be.
                 </p>
-                <a href="#manifesto" class="bg-gold text-oxford px-8 py-4 text-sm sm:text-base font-sans font-bold transition-all duration-300 hover:bg-[#b5952f] inline-block">
-                    Read our manifesto
-                </a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#totw" class="bg-gold text-oxford px-6 py-3 text-sm font-sans font-bold transition-all duration-300 hover:bg-[#b5952f] inline-block border border-gold">
+                        Theorem of the Week
+                    </a>
+                    <a href="#potw" class="bg-transparent text-gold px-6 py-3 text-sm font-sans font-bold transition-all duration-300 hover:bg-gold hover:text-oxford inline-block border border-gold">
+                        Problem of the Week
+                    </a>
+                </div>
             </div>
             <div class="flex justify-center items-center w-full h-full">
                 <div class="relative w-full aspect-square lg:aspect-[4/3] max-w-[650px] flex justify-center items-center">
@@ -128,12 +131,12 @@
                     <div class="bg-white p-6 md:p-8 border border-gray-200 rounded-lg shadow-lg relative group">
                         <div class="relative z-10">
                             <div class="flex justify-between items-center mb-4 border-b border-gray-100 pb-4">
-                                <h3 class="text-xl md:text-2xl font-bold text-oxford font-serif">The Dirichlet Integral</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-oxford font-serif">Functional Equation</h3>
                             </div>
                             <div class="text-gray-700 font-serif leading-relaxed text-base">
-                                Prove that the improper integral converges and find its exact value:
+                                Show that there are no continuous functions $f$, $g$ and $h$ defined on $\mathbb{R}$ satisfying
                                 <div class="my-4 text-center text-xl text-oxford font-bold">
-                                    $$ \int_{0}^{\infty} \frac{\sin x}{x} dx = ? $$
+                                    $$ h(f(x)+g(y)) = xy \quad\forall x, y \in \mathbb{R}$$
                                 </div>
                             </div>
                         </div>
@@ -175,26 +178,19 @@
             <div>
                 <h4 class="text-gold font-sans font-bold uppercase tracking-widest text-xs mb-6">Connect</h4>
                 <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                    <li>Indian Institute of Technology Guwahati</li>
+                    <li>Indian Institute of Technology, Guwahati</li>
                     <li>Surjyamukhi Road, North Guwahati</li>
                     <li>Assam, India 781039</li>
                     <li class="pt-2">
-                        <a href="mailto:mathsoc@iitg.ac.in" class="hover:text-gold transition-colors border-b border-transparent hover:border-gold pb-0.5">mathsoc@iitg.ac.in</a>
+                        <a href="mailto:mathsoc@iitg.ac.in" class="hover:text-gold transition-colors border-b border-transparent hover:border-gold pb-0.5">Email: iitg.mathsoc@gmail.com</a>
                     </li>
                 </ul>
                 <div class="flex gap-5 items-center">
-                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="Instagram">
+                    <a href="https://www.instagram.com/mathsoc_iitg" target="_blank" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
                         </svg>
                     </a>
                 </div>

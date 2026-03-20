@@ -130,125 +130,12 @@
                     <button class="filter-btn px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300 bg-white text-gray-600 border border-gray-300 hover:border-oxford hover:text-oxford" data-filter="calculus">Calculus</button>
                     <button class="filter-btn px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300 bg-white text-gray-600 border border-gray-300 hover:border-oxford hover:text-oxford" data-filter="number-theory">Number Theory</button>
                     <button class="filter-btn px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300 bg-white text-gray-600 border border-gray-300 hover:border-oxford hover:text-oxford" data-filter="linear-algebra">Linear Algebra</button>
+                    <button class="filter-btn px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300 bg-white text-gray-600 border border-gray-300 hover:border-oxford hover:text-oxford" data-filter="linear-algebra">Functions</button>
                 </div>
 
                 <div class="flex flex-col gap-4 max-w-[1100px] mx-auto w-full" id="archive-grid">
                     
-                    <div class="archive-card animate-zoom-pop bg-white border border-gray-200 rounded-lg transition-all duration-300 relative group shadow-sm" style="animation-delay: 0s;" data-category="calculus">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gold transition-colors duration-300 rounded-l-lg"></div>
-                        
-                        <div class="p-6 cursor-pointer expand-trigger flex justify-between items-center gap-4">
-                            <div class="flex items-center gap-4 md:gap-6 overflow-hidden flex-grow">
-                                <h3 class="text-xl font-bold text-oxford font-serif m-0 whitespace-nowrap">3.</h3>
-                                <p class="preview-text text-gray-500 font-serif truncate text-base transition-opacity duration-300 flex-grow hidden sm:block">
-                                    Prove the Basel problem, showing that the infinite sum of the reciprocals...
-                                </p>
-                            </div>
-                            
-                            <div class="flex items-center gap-6 shrink-0">
-                                <span class="text-xs font-bold text-gold uppercase tracking-widest hidden md:block">Calculus</span>
-                                <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-300 chevron-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </div>
-
-                        <div class="expandable-body px-6">
-                            <div class="overflow-hidden">
-                                
-                                <div class="pb-6 border-t border-gray-100 pt-6">
-                                    <div class="text-gray-700 font-serif leading-relaxed text-lg pb-4">
-                                        Prove the Basel problem, showing that the infinite sum of the reciprocals of the squares of the natural numbers equals pi squared over six:
-                                        <div class="my-6 overflow-x-auto overflow-y-hidden text-center text-xl">
-                                            $$ \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} $$
-                                        </div>
-                                        Using Euler's original approach, assume that the infinite polynomial expansion of the sine function can be factored in terms of its roots, just like a finite polynomial.
-                                    </div>
-
-                                    <div class="pt-2 relative z-20 bg-white">
-                                        <div class="flex flex-wrap gap-4 border-b border-gray-100 pb-4">
-                                            <button class="toggle-btn text-sm font-semibold text-gray-500 hover:text-oxford transition-colors flex items-center gap-1" data-target="hint-1">
-                                                Reveal Hint
-                                            </button>
-                                            <button class="toggle-btn text-sm font-semibold text-gray-500 hover:text-oxford transition-colors flex items-center gap-1" data-target="sol-1">
-                                                Show Solution
-                                            </button>
-                                        </div>
-
-                                        <div id="hint-1" class="reveal-content mt-4">
-                                            <div class="reveal-inner bg-gray-50 p-5 rounded-md border border-gray-200 text-sm text-gray-700 font-serif">
-                                                <strong class="font-sans uppercase text-xs tracking-widest text-oxford block mb-2">Hint:</strong>
-                                                Consider the Maclaurin series expansion of $\frac{\sin x}{x}$ and compare the coefficient of $x^2$ with its infinite product representation (the Weierstrass factorization).
-                                            </div>
-                                        </div>
-
-                                        <div id="sol-1" class="reveal-content mt-4">
-                                            <div class="reveal-inner bg-white p-5 rounded-md border border-gray-200 shadow-inner text-sm text-gray-800 font-serif">
-                                                <strong class="font-sans uppercase text-xs tracking-widest text-gold block mb-2">Solution:</strong>
-                                                Equate the $x^2$ coefficient of the Taylor series $\frac{\sin x}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \dots$ with the expanded infinite product $\prod (1 - \frac{x^2}{n^2\pi^2})$. The coefficient of $x^2$ in the infinite product is $-\sum \frac{1}{n^2\pi^2}$. Setting this equal to $-\frac{1}{3!}$ yields the final result.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="archive-card animate-zoom-pop bg-white border border-gray-200 rounded-lg transition-all duration-300 relative group shadow-sm" style="animation-delay: 0.1s;" data-category="number-theory">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gold transition-colors duration-300 rounded-l-lg"></div>
-                        
-                        <div class="p-6 cursor-pointer expand-trigger flex justify-between items-center gap-4">
-                            <div class="flex items-center gap-4 md:gap-6 overflow-hidden flex-grow">
-                                <h3 class="text-xl font-bold text-oxford font-serif m-0 whitespace-nowrap">2.</h3>
-                                <p class="preview-text text-gray-500 font-serif truncate text-base transition-opacity duration-300 flex-grow hidden sm:block">
-                                    Prove that there are infinitely many primes $p$ such that $p \equiv 1 \pmod 4$...
-                                </p>
-                            </div>
-                            
-                            <div class="flex items-center gap-6 shrink-0">
-                                <span class="text-xs font-bold text-gold uppercase tracking-widest hidden md:block">Number Theory</span>
-                                <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-300 chevron-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </div>
-
-                        <div class="expandable-body px-6">
-                            <div class="overflow-hidden">
-                                <div class="pb-6 border-t border-gray-100 pt-6">
-                                    <div class="text-gray-700 font-serif leading-relaxed text-lg pb-4">
-                                        Prove that there are infinitely many primes $p$ such that:
-                                        <div class="my-6 overflow-x-auto overflow-y-hidden text-center text-xl">
-                                            $$ p \equiv 1 \pmod 4 $$
-                                        </div>
-                                        You may want to use a proof by contradiction similar to Euclid's classic proof for the infinitude of all primes, but utilizing quadratic residues.
-                                    </div>
-
-                                    <div class="pt-2 relative z-20 bg-white">
-                                        <div class="flex flex-wrap gap-4 border-b border-gray-100 pb-4">
-                                            <button class="toggle-btn text-sm font-semibold text-gray-500 hover:text-oxford transition-colors flex items-center gap-1" data-target="hint-2">
-                                                Reveal Hint
-                                            </button>
-                                            <button class="toggle-btn text-sm font-semibold text-gray-500 hover:text-oxford transition-colors flex items-center gap-1" data-target="sol-2">
-                                                Show Solution
-                                            </button>
-                                        </div>
-
-                                        <div id="hint-2" class="reveal-content mt-4">
-                                            <div class="reveal-inner bg-gray-50 p-5 rounded-md border border-gray-200 text-sm text-gray-700 font-serif">
-                                                <strong class="font-sans uppercase text-xs tracking-widest text-oxford block mb-2">Hint:</strong>
-                                                Assume there are finitely many such primes, $p_1, \dots, p_k$. Consider the prime factors of the constructed number $N = (2p_1 \dots p_k)^2 + 1$.
-                                            </div>
-                                        </div>
-
-                                        <div id="sol-2" class="reveal-content mt-4">
-                                            <div class="reveal-inner bg-white p-5 rounded-md border border-gray-200 shadow-inner text-sm text-gray-800 font-serif">
-                                                <strong class="font-sans uppercase text-xs tracking-widest text-gold block mb-2">Solution:</strong>
-                                                Any odd prime factor $q$ of $N$ must satisfy $(2p_1 \dots p_k)^2 \equiv -1 \pmod q$. This implies $-1$ is a quadratic residue modulo $q$. By properties of the Legendre symbol, this means $q \equiv 1 \pmod 4$. Since $q$ divides $N$, it cannot be any of the original $p_i$, contradicting the assumption that the list was finite.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="archive-card animate-zoom-pop bg-white border border-gray-200 rounded-lg transition-all duration-300 relative group shadow-sm" style="animation-delay: 0.2s;" data-category="linear-algebra">
                         <div class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gold transition-colors duration-300 rounded-l-lg"></div>
@@ -257,12 +144,12 @@
                             <div class="flex items-center gap-4 md:gap-6 overflow-hidden flex-grow">
                                 <h3 class="text-xl font-bold text-oxford font-serif m-0 whitespace-nowrap">1.</h3>
                                 <p class="preview-text text-gray-500 font-serif truncate text-base transition-opacity duration-300 flex-grow hidden sm:block">
-                                    Let $A$ and $B$ be $n \times n$ matrices with real entries. Prove that the trace operator...
+                                    Show that there are no continuous functions $f$, $g$ and $h$ defined on ...
                                 </p>
                             </div>
                             
                             <div class="flex items-center gap-6 shrink-0">
-                                <span class="text-xs font-bold text-gold uppercase tracking-widest hidden md:block">Linear Algebra</span>
+                                <span class="text-xs font-bold text-gold uppercase tracking-widest hidden md:block">FUNCTIONS</span>
                                 <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-300 chevron-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                             </div>
                         </div>
@@ -271,11 +158,10 @@
                             <div class="overflow-hidden">
                                 <div class="pb-6 border-t border-gray-100 pt-6">
                                     <div class="text-gray-700 font-serif leading-relaxed text-lg pb-4">
-                                        Let $A$ and $B$ be $n \times n$ matrices with real entries. Prove that the trace operator is cyclically commutative:
+                                        Show that there are no continuous functions $f$, $g$ and $h$ defined on $\mathbb{R}$ satisfying
                                         <div class="my-6 overflow-x-auto overflow-y-hidden text-center text-xl">
-                                            $$ \text{tr}(AB) = \text{tr}(BA) $$
+                                            $$ h(f(x)+g(y)) = xy \quad\forall x, y \in \mathbb{R}$$
                                         </div>
-                                        Do not use the property of eigenvalues, but rather prove it directly using the index summation definition of matrix multiplication.
                                     </div>
 
                                     <div class="pt-2 relative z-20 bg-white">
@@ -291,14 +177,14 @@
                                         <div id="hint-3" class="reveal-content mt-4">
                                             <div class="reveal-inner bg-gray-50 p-5 rounded-md border border-gray-200 text-sm text-gray-700 font-serif">
                                                 <strong class="font-sans uppercase text-xs tracking-widest text-oxford block mb-2">Hint:</strong>
-                                                Write out the explicit definition for the trace: $\text{tr}(M) = \sum_{i=1}^n M_{ii}$. Substitute the definition of matrix multiplication for $M = AB$.
+                                                ...
                                             </div>
                                         </div>
 
                                         <div id="sol-3" class="reveal-content mt-4">
                                             <div class="reveal-inner bg-white p-5 rounded-md border border-gray-200 shadow-inner text-sm text-gray-800 font-serif">
                                                 <strong class="font-sans uppercase text-xs tracking-widest text-gold block mb-2">Solution:</strong>
-                                                By definition, $\text{tr}(AB) = \sum_i (AB)_{ii} = \sum_i \sum_j A_{ij}B_{ji}$. Because scalar multiplication is commutative in the real numbers, we can rearrange the terms and sums: $\sum_j \sum_i B_{ji}A_{ij} = \sum_j (BA)_{jj} = \text{tr}(BA)$.
+                                                Solution in a week.
                                             </div>
                                         </div>
                                     </div>
@@ -346,24 +232,16 @@
                     <li>Surjyamukhi Road, North Guwahati</li>
                     <li>Assam, India 781039</li>
                     <li class="pt-2">
-                        <a href="mailto:mathsoc@iitg.ac.in" class="hover:text-gold transition-colors border-b border-transparent hover:border-gold pb-0.5">mathsoc@iitg.ac.in</a>
+                        <a href="mailto:mathsoc@iitg.ac.in" class="hover:text-gold transition-colors border-b border-transparent hover:border-gold pb-0.5">Email: iitg.mathsoc@gmail.com</a>
                     </li>
                 </ul>
 
                 <div class="flex gap-5 items-center">
-                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="Instagram">
+                    <a href="https://www.instagram.com/mathsoc_iitg" target="_blank" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    
-                    <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
                         </svg>
                     </a>
                 </div>
